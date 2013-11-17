@@ -101,7 +101,7 @@ header {
   position:fixed;
 }
 
-header ul {
+.buttons-list ul {
   list-style:none;
   height:40px;
   
@@ -121,14 +121,14 @@ header ul {
   width:270px;
 }
 
-header li {
+.buttons-list li {
   width:89px;
   float:left;
   border-right:1px solid #d2d2d2;
   height:40px;
 }
 
-header ul a {
+.buttons-list ul a {
   line-height:1;
   font-size:11px;
   color:#999;
@@ -143,17 +143,17 @@ strong {
   font-weight:700;
 }
 
-header ul li + li {
+.buttons-list ul li + li {
   width:88px;
   border-left:1px solid #fff;
 }
 
-header ul li + li + li {
+.buttons-list ul li + li + li {
   border-right:none;
   width:89px;
 }
 
-header ul a strong {
+.buttons-list ul a strong {
   font-size:14px;
   display:block;
   color:#222;
@@ -164,6 +164,8 @@ section {
   float:right;
   padding-bottom:50px;
 }
+
+section img {width: 90%;margin: 2% 5%}
 
 small {
   font-size:11px;
@@ -197,8 +199,14 @@ footer {
   }
   
   header {
-    padding-right:320px;
+    background: #fff;
+    border-bottom: 3px solid #e0e0e0;
+    width: 96%;
+    padding: 2%
   }
+
+  header nav {display: none;background: #f0f0f0;padding: 2% 0}
+  #nav-trigger{display: block !important;}
   
   section {
     border:1px solid #e5e5e5;
@@ -223,10 +231,6 @@ footer {
     word-wrap:break-word;
   }
   
-  header {
-    padding:0;
-  }
-  
   header ul, header p.view {
     position:static;
   }
@@ -239,10 +243,6 @@ footer {
 @media print, screen and (max-width: 480px) {
   body {
     padding:15px;
-  }
-  
-  header ul {
-    display:none;
   }
 }
 

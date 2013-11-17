@@ -3,54 +3,326 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Dajavascript by dng-es</title>
+    <title>DaJavascript by dng-es</title>
 
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <link rel="stylesheet" href="stylesheets/styles_da.css">
+    <link rel="stylesheet" href="stylesheets/font-awesome.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+    <script src="javascripts/jquery-1.9.1.js"></script>
+    <script>
+      $(document).ready(function(){
+        $("nav ol li a").click(function(e) {
+            e.preventDefault(); 
+            $('html, body').animate({
+                scrollTop: $("#" + $(this).attr("data-dest")).offset().top
+            }, 500);
+        });
+
+        $("section h2, section h3, section h3, section h4").addClass("fa fa-code");
+
+        $("#nav-trigger").click(function(){
+          $("header nav").slideToggle();
+        });
+
+        $("#top-trigger").click(function(){
+          $('body,html').animate({
+                scrollTop: 0
+            }, 500);
+            return false;
+        })
+
+        $(window).scroll(function(){
+          var posscroll = $(window).scrollTop(),
+              elem = null;
+          $("section h2, section h3").each(function(){
+            if ( (posscroll+200 > $(this).offset().top)){
+              elem = this;
+            }
+          });
+
+          $("nav ol li a").removeClass("navSelected");
+          $("#nav-" + elem.id ).addClass("navSelected");
+
+          //button gotop
+          if (posscroll > 50){
+            $("#top-trigger").fadeIn();
+          }
+          else{
+            $("#top-trigger").fadeOut();
+          }
+        })
+      });
+    </script>
   </head>
   <body>
     <div class="wrapper">
       <header>
-        <h1>Dajavascript</h1>
-        <p>Manual de Javascript</p>
+        <h1>DaJavascript</h1>
+        <p>Manual de Javascript, desde cero hasta lo más avanzado del lenguaje.</p>
 
-        <p class="view"><a href="https://github.com/dng-es/daJavascript">View the Project on GitHub <small>dng-es/daJavascript</small></a></p>
+        <div id="nav-trigger"><span class="fa fa-bars"></span></div>
+        <nav>
+          <ol>
+            <li><a href="#" data-dest="historia" id="nav-historia">Historia</a></li>
+            <li><a href="#" data-dest="accion" id="nav-accion">La capa de acción</a></li>
+            <li><a href="#" data-dest="herramientas" id="nav-herramientas">Herramientas</a>
+              <li><a href="#" data-dest="sintaxis" id="nav-sintaxis">Sintaxis</a>
+              <ol>
+                <li><a href="#" data-dest="variables" id="nav-variables">Variables</a></li>
+                <li><a href="#" data-dest="operadores" id="nav-operadores">Operadores</a></li>
+                <li><a href="#" data-dest="condicionales" id="nav-condicionales">Condicionales</a></li>
+                <li><a href="#" data-dest="bucles" id="nav-bucles">Bucles</a></li>
+                <li><a href="#" data-dest="funciones" id="nav-funciones">Funciones</a></li>
+                </li>
+              </ol>
+            </li>
+            
+            <li><a href="#" data-dest="dom" id="nav-dom">DOM</a>
+            <li><a href="#" data-dest="bom" id="nav-bom">BOM</a>
+            <li><a href="#" data-dest="eventos" id="nav-eventos">Eventos</a>
+            <li><a href="#" data-dest="regulares" id="nav-regulares">Expresiones regulares</a></li>
+            <li><a href="#" data-dest="tests" id="nav-tests">Fase de pruebas</a>
+          </ol>
+        </nav>
 
 
-        <ul>
-          <li><a href="https://github.com/dng-es/daJavascript/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/dng-es/daJavascript/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/dng-es/daJavascript">View On <strong>GitHub</strong></a></li>
-        </ul>
       </header>
       <section>
-        <h1>
-<a name="dajavascript" class="anchor" href="#dajavascript"><span class="octicon octicon-link"></span></a>daJavascript</h1>
+        <h2 id="historia">Historia</h2>
+        <p>Para entender Javascript es necesario conocer su historia y como surgió, apareciendo como una necesidad en el creciente auge de internet de los años 90. En esta época, las páginas Web se estaban haciendo cada vez más complejas y se veía necesario el poder interactuar con ciertas acciones del usuario. Por otro lado, todavia las comunicaciones erán lentas y en ocasiones, como en los formularios de registro que cada vez eran tambien más y más complejos y que cuando se necesitaba validarlos, esperar una respuesta de vuelta del servidor, podía llegar a ser una operación eterna.</p>
 
-<p>Manual de Javascript, desde cero hasta las características más avanzadas el lenguaje.</p>
+        <p>Por estos motivos fue surgiendo la necesida de un lenguaje que se ejecutase en el cliente y que fuese capaz de interactuar con el usuario. Java fue el primero en hacerlo y con la creación applets que se ejecutaban en los navegadores como complementos se logró. No obstante, se necesitaba algo más sencillo y fue Netscape quien inicio el desarrollo de un lenguaje de script que se ejecutaba directamente en su navegador. Así nacio LiveScript, aunque poco le duro el nombre, ya que al poco tiempo y sin llegarse a lanzar, Netscape firmo una alianza con Sun, creador de Java, para el desarrollo de este nuevo. Así nació finalmente Javascript, aunque hay que recalcar que Javascript y Java no tienen nada que ver.</p>
 
-<p>Puedes accder al manual completo desde <a href="http://dng-es.github.io/dajavascript" target="_blank">aquí </a></p>
+        <p>En Netscape 2.0 se incluyo la primera versión de Javascript. Por aquella época ya habia comenzado lo que se conocio como la <em>guerra de los navegadores</em> entre Microsoft y Netscape, por lo que Microsoft no tardo en sacar su propio lenguaje para su navegador Internet Explorer y lo llamo JScript, que era practicamente una reproducción.</p>
+
+        <p>En 199X Netscape presenta a la ECMA su lenguaje Javascript para la estandarización, el cual fue aprobado por la ECMA262 y estandarizado bajo el nombre ECMAScript.</p>
+
+        <h2 id="accion">La capa de acción</h2>
+        <p>Debemos considerar que una pagina Web esta formada por cuatro capas: contenido, estrucctura (Html), estilos (Css) y acciones(Javascript). La siguiente figura ilustra esa estructura</p>
+        <img src="images/0001.png" />
+
+        <h2 id="herramientas">Herramientas</h2>
+        <p>Javascript es un lenguaje interpretado y no compilado, por lo que para crear código javascript nos servirá cualquier editor de texto. Adicionalemnte, necesitaremos otras herramientas para la depuración de los scripts y herramientas para la realización de pruebas de nuestro codigo.</p>
+        <p><strong>Herramientas de depuración:</strong> algunos de los navegadores modernos cuentas con sus propias herramientas de depuración. Tambien existen plugins para los navegadores que amplian las posibilidades como por ejemplo <a href="https://getfirebug.com/" target="_blank">firebug</a>,</p>
+        <p><strong>Herramientas de pruebas:</strong> se dedicará un capitulo exclusivamente a la realización de pruebas y aprenderemos a crear nuestro propio validador. Tambien veremos otras herramientas con las que realizar todo tipo de pruebas incluidas para operaciones asíncronas.</p>
+
+
+        <h2 id="sintaxis">Sintaxis</h2>
+        <p>Javascript esta influenciado por otros lenguajes como C, por lo que su sintaxis es muy similar en cuanto a la declaración de varibles, operadores e instrucciones.</p>
+
+        <h3 id="variables">Variables</h3>
+        <p>La declaración de variables se hace mediante <strong><em>var</em></strong> y el nombre de la variable, en Javascript no se especifica el tipo, el tipo de varible es tomado segun el valor asignado.</p>
+        <div class="highlight highlight-html"><pre>
+var a = "un texto";   //cadena
+var b = 8;            //entero
+var c = true;         //booleano
+var d = {};           //objeto</pre>
+        </div>
+        <p>El ambito de una variable representa el espacio desde el cual esa variable es accesible.</p>
+
+        <div class="cita">
+          <p><span class="fa fa-info-circle"></span>En Javascript, el ámbito de las variables no esta definido por los bloques sino por la funciones donde están definidas.<p>
+        </div>
+
+        <h3 id="operadores">Operadores</h3>
+        <p>En Javascript se definen operadores aritméticos y de comparación:</p>
+
+        <h4>Operadores aritméticos</h4>
+        <table>
+                <tr>
+                    <th scope="col">Operador</th>
+                    <th scope="col">Operación</th>
+                    <th scope="col">Descripción</th>
+                </tr>
+                <tr>
+                    <td><code>+</code></td>
+                    <td>Adición</td>
+                    <td>suma de dos variables</td>
+                </tr>
+                <tr>
+                    <td><code>-</code></td>
+                    <td>Sustracción</td>
+                    <td>resta de dos variables</td>
+                </tr>
+                <tr>
+                    <td><code>*</code></td>
+                    <td>Multiplicación</td>
+                    <td>multiplicación de dos variables</td>
+                </tr>
+                <tr>
+                    <td><code>/</code></td>
+                    <td>División</td>
+                    <td>división de dos variables</td>
+                </tr>
+                <tr>
+                    <td><code>%</code></td>
+                    <td>Módulo de división</td>
+                    <td>asigna a total el resto de la división de las dos variables</td>
+                </tr>
+            </table>
+            
+        <h4>Operadores comparativos</h4>
+        <p>la siguiente tabla muestra los operadores comprativos</p>
+<table>
+                <tr>
+                    <th scope="col">Operador</th>
+                    <th scope="col">Significado</th>
+                    <th scope="col">Descripción</th>
+                </tr>
+                <tr>
+                    <td><code>&gt;</code></td>
+                    <td>Mayor que</td>
+                    <td>un valor es mayor que otro</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;</code></td>
+                    <td>Menor que</td>
+                    <td>un valor es menor que otro</td>
+                </tr>
+                <tr>
+                    <td><code>==</code></td>
+                    <td>Igual a</td>
+                    <td>un valor es igual que otro</td>
+                </tr>
+                <tr>
+                    <td><code>!=</code></td>
+                    <td>Distinto de</td>
+                    <td>un valor es distinto que otro</td>
+                </tr>
+                <tr>
+                    <td><code>&gt;=</code></td>
+                    <td>Mayor o igual a</td>
+                    <td>un valor es mayor o igual que otro</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;=</code></td>
+                    <td>Menor o igual que</td>
+                    <td>un valor es menor o igual que otro</td>
+                </tr>
+                <tr>
+                    <td><code>===</code></td>
+                    <td>Idéntico a</td>
+                    <td>un valor es estrictamente igual que otro. true==="true" devolvera false</td>
+                </tr>
+                <tr>
+                    <td><code>!==</code></td>
+                    <td>No idéntico a</td>
+                    <td>un valor no es estrictamente igual a otro</td>
+                </tr>
+                <tr>
+                    <td><code>!!</code></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+
+        <h3 id="condicionales">Condicionales</h3>
+        <p>Los condicioneles en Javascript</p>
+
+        <h4>Condicional if ... else</h4>
+        <p>El condicional if else se declara de la siguiente forma:</p>
+        <div class="highlight highlight-html"><pre>
+if(condicion){
+  //acciones
+}
+elseif(condicion){
+  //acciones
+}
+else{
+  //acciones
+}</pre>
+        </div>
+
+        <h4>Condicional ternario</h4>
+        <p>En Javascript como en otros lenguajes, tambien existe el operador tenerario. Su construcción es igual a como se hace en PHP. En el siguiente ejemplo se define una varible <em>a</em> y se le asigna como valor <em>valor1</em> si se cumple <em>condicion</em>, si no se cumple tomará <em>valor2</em>:
+        <div class="highlight highlight-html"><pre>
+var a = condicion ? valor1 : valor2;
+var c = a > b ? valor1 : valor2;</pre>
+        </div> 
+        <p>En el segundo ejemplo, <em>c</em> tomará el valor <em>valor1</em> si a es mayor que b y tomara el valor <em>valor2</em> en caso contrario.</p>       
+
+        <h4>Switch</h4>
+        <p>Con switch podemos definir diferentes bloques que se ejecutaran dependiendo del valor de una variable:</p>
+        <div class="highlight highlight-html"><pre>
+switch (variable){
+  case (valor1):
+    //acciones
+    break;
+  case (valor2):
+    //acciones
+    break;
+  default:
+    //acciones
+    break;
+}</pre>
+        </div> 
+
+        <h3 id="bucles">Bucles</h3>
+        <p>Los bucles en Javascript</p>
+
+        <h4>Bucle for</h4>
+        <p>El bucle for se crea como en la mayoria de los lenguajes:</p>
+        <div class="highlight highlight-html"><pre>
+for (var i=0; i<10; i++){
+  //acciones
+}</pre>
+        </div> 
+
+        <h4>Bucle do ... while</h4>
+        <p>En Javascript tambien existe el bucle do while, que se define de la siguiente forma:</p>
+        <div class="highlight highlight-html"><pre>
+do{
+  //acciones
+}while(condicion);</pre>
+        </div>         
+
+        <h3 id="funciones">Funciones</h3>
+        <p>Las funciones en Javascript son vitales y son consideradas un objeto de primera clase. Las funciones pueden declararse de varias formas, veámoslas;</p>
+        <div class="highlight highlight-html"><pre>
+function miFunction(a, b){
+  return a+b;
+}
+
+console.log(miFunction(1,2));</pre>
+        <p>Hemos invocado la función <em>miFunction</em> con dos argumentos, la función <em>miFunction</em> recibe dos parámetros: a y b.</p>
+        <p>Toda función recibe, ademas de los parametros especificados, dos parametros adiciones: <strong><em>arguments</em></strong> y el ámbito en el cual es invicada la función. El parámetro <em>arguments</em> es una especie de array (no puede considerarse un array ya que no posee ciertos metodos que tienen todos los arrays, como por ejemplo push) que contiene todos los argumentos con los que ha sido invocada la función. En el ejemplo anterior, al invocar <em>miFunction(1,2)</em>, <em>arguments</em> contendria dos elementos con los valores 1 y 2.</p>
+        </div> 
+        <h2 id="dom">DOM</h2>
+        <p>El DOM (Document Object Model)</p>
+
+        <h2 id="bom">BOM</h2>
+        <p>El BOM (Browser Object Model)</p>
+
+        <h2 id="eventos">Eventos</h2>
+        <p>Un evento tiene lugar cuando se produce una acción: el usuario hace click, se envia un formulario o cuando cambia de tamaño la ventana el navegador.</p>
+
+        <h2 id="regulares">Expresiones regulares</h2>
+        <p>Las expresiones regulares y su manejo son muy importantes en Javascript y serán muy utiles en las operaciones de comprobación, selección de elementos del DOM y otras acciones que necesitemos realizar.</p>
+
+        <h2 id="tests">Fase de pruebas</h2>
+        <p>Todo ninja de probar sus hazañas y demostrar que son ciertas, para ello es necesario la realización de pruebas y <em>tests</em> unitarios de nuestros scripts.</p>
+
+        <div id="top-trigger"><span class="fa fa-chevron-circle-up" title="subir al principio"></span></div>
       </section>
       <footer>
-        <p>This project is maintained by <a href="https://github.com/dng-es">dng-es</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+        <p><span class="fa fa-cloud"></span>This project is maintained by <a href="https://github.com/dng-es">dng-es</a> &mdash; <small>Hosted on GitHub Pages  </small></p>
       </footer>
     </div>
     <script src="javascripts/scale.fix.js"></script>
-              <script type="text/javascript">
-            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-          </script>
-          <script type="text/javascript">
-            try {
-              var pageTracker = _gat._getTracker("UA-45807891-1");
-            pageTracker._trackPageview();
-            } catch(err) {}
-          </script>
-
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+      </script>
+      <script type="text/javascript">
+        try {
+          var pageTracker = _gat._getTracker("UA-45807891-1");
+        pageTracker._trackPageview();
+        } catch(err) {}
+    </script> 
   </body>
 </html>
