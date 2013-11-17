@@ -16,18 +16,19 @@ input[type=submit]{color:#000;cursor:pointer;display: block;margin:10px 0;paddin
 input[type=submit]:hover{color:#666;}
 .davalidator-msg{padding: 1% 2%;background:#F5f5f5;display: block;margin: 1% 0}
 h2{color: #3399CC;font-size: 28px}
-h3{color: #888; font-size: 22px}
-h4{font-size: 20px}
+h3{color: #888; font-size: 22px;border-bottom: 2px #ccc dashed;display: block !important;padding-bottom: 4px}
+h4{font-size: 20px;border-bottom: 2px #e0e0e0 dashed;color:#c0c0c0;display: block!important;padding-bottom: 4px}
 nav {display: block}
 nav ol {margin: 0;}
 .navSelected{color: #999;font-style: italic;font-weight: bold}
-#nav-trigger{background-color: #ccc;border-radius: 100px;color:#fff;font-size: 36px;cursor: pointer;display:none;overflow: hidden;padding: 2px 12px;position: absolute; top:5%;right: 5%}
-#nav-trigger:hover{color:#000;}
+#nav-trigger{background-color: #ccc;border-radius: 100px;color:#fff;font-size: 26px;cursor: pointer;display:none;overflow: hidden;padding: 2px 12px;position: absolute; top:5%;right: 5%}
+#nav-trigger:hover{color:#3399CC;}
 
 #top-trigger{background-color: #999;border-radius: 100px;color:#fff;font-size: 26px;cursor: pointer;display:none;overflow: hidden;padding: 0px 8px;position: fixed; bottom:5%;right: 5%;opacity: 0.6}
 #top-trigger:hover{background-color:#3399CC;}
 .cita{background: #f0f0f0;padding: 2% 4% 0.5%;width: 82%;margin: 2% 5% 3%; color: #999;font-style: italic}
 .cita .fa{font-size: 24px;margin:0 10px 2px 0} 
+.legend{color:#999;font-style: italic;margin: 0 0 15px 0;text-align: center;}
 
 footer span {font-size: 24px;margin-right: 5px; color: #3399CC}
 

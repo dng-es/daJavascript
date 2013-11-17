@@ -87,6 +87,7 @@
             <li><a href="#" data-dest="eventos" id="nav-eventos">Eventos</a>
             <li><a href="#" data-dest="regulares" id="nav-regulares">Expresiones regulares</a></li>
             <li><a href="#" data-dest="tests" id="nav-tests">Fase de pruebas</a>
+            <li><a href="#" data-dest="bibliografia" id="nav-bibliografia">Bibliografía</a>
           </ol>
         </nav>
 
@@ -98,13 +99,21 @@
 
         <p>Por estos motivos fue surgiendo la necesida de un lenguaje que se ejecutase en el cliente y que fuese capaz de interactuar con el usuario. Java fue el primero en hacerlo y con la creación applets que se ejecutaban en los navegadores como complementos se logró. No obstante, se necesitaba algo más sencillo y fue Netscape quien inicio el desarrollo de un lenguaje de script que se ejecutaba directamente en su navegador. Así nacio LiveScript, aunque poco le duro el nombre, ya que al poco tiempo y sin llegarse a lanzar, Netscape firmo una alianza con Sun, creador de Java, para el desarrollo de este nuevo. Así nació finalmente Javascript, aunque hay que recalcar que Javascript y Java no tienen nada que ver.</p>
 
-        <p>En Netscape 2.0 se incluyo la primera versión de Javascript. Por aquella época ya habia comenzado lo que se conocio como la <em>guerra de los navegadores</em> entre Microsoft y Netscape, por lo que Microsoft no tardo en sacar su propio lenguaje para su navegador Internet Explorer y lo llamo JScript, que era practicamente una reproducción.</p>
+        <p>Por aquella época ya habia comenzado lo que se conocio como la <em>guerra de los navegadores</em> entre Microsoft y Netscape, por lo que Microsoft no tardo en sacar su propio lenguaje para su navegador Internet Explorer y lo llamo JScript, que era practicamente una reproducción. Así empezó la aparición de funcionalidades propietarias y las difrencias entre los los distintos navegadores, difrencias que hoy en dia los desarrolladores siguen sufiendo.</p>
 
-        <p>En 199X Netscape presenta a la ECMA su lenguaje Javascript para la estandarización, el cual fue aprobado por la ECMA262 y estandarizado bajo el nombre ECMAScript.</p>
+        <p>En 1997 Netscape presenta a la ECMA su lenguaje Javascript para la estandarización, el cual fue aprobado por la ECMA262 y estandarizado bajo el nombre ECMAScript. Pero no fue hasta la versión 1.3 de Javascript, soportada por Netscape 4.06, la primera versión cumplió con los estandares del ECMAScript</p>
+
+        <p>Así podemos decir que JavaScript consta de tres componentes:</p>
+        <ul>
+            <li><strong>ECMAScript</strong>, que define todo lo relativo a su sintaxis: tipos de variables, objetos nativos e incorporados, métodos, etc.</li>
+            <li>El <strong>DOM</strong>, o Modelo de Objeto de Documento (Document Object Model), una API para trabajar sobre la estructura de un documento y permitir su modificación.</li>
+            <li>El <strong>BOM</strong>, o Modelo de Objeto de Navegador (Browser Object Model), que permite la manipulación de la ventana del navegador.</li>
+        </ul>
 
         <h2 id="accion">La capa de acción</h2>
         <p>Debemos considerar que una pagina Web esta formada por cuatro capas: contenido (los textos con la información), estrucctura (Html), estilos (Css) y acciones (Javascript). La siguiente figura ilustra esa estructura</p>
         <img src="images/0001.png" />
+        <p class="legend">Fuente: codexexempla.org</p>
 
         <h2 id="herramientas">Herramientas</h2>
         <p>Javascript es un lenguaje interpretado y no compilado, por lo que para crear código javascript nos servirá cualquier editor de texto. Adicionalemnte, necesitaremos otras herramientas para la depuración de los scripts y herramientas para la realización de pruebas de nuestro codigo.</p>
@@ -306,7 +315,13 @@ console.log(miFunction(1,2));</pre>
 
         <h2 id="tests">Fase de pruebas</h2>
         <p>Todo ninja de probar sus hazañas y demostrar que son ciertas, para ello es necesario la realización de pruebas y <em>tests</em> unitarios de nuestros scripts.</p>
-        <p>Vamos a crear un nuestro propia libreria para la realización de pruebas. Podemos encontrar varios frameworks para creación de tests, entre los que se destacan <a target="_blank" href="http://qunitjs.com/">QUnit</>.</p>
+        <p>Vamos a crear un nuestro propia libreria para la realización de pruebas. Podemos encontrar varios frameworks para creación de tests, entre los que se destacan <a target="_blank" href="http://qunitjs.com/">QUnit</a>.</p>
+
+        <h2 id="bibliografia">Bibliografía</h2>
+        <p>Para la realización de este manual se ha consultado las siguienetes fuentes:></p>
+        <ul>
+            <li><a href="http://www.codexexempla.org/curso/index.php" target="_black">codexexempla.org</a></li>
+        </ul>
 
         <div id="top-trigger"><span class="fa fa-chevron-circle-up" title="subir al principio"></span></div>
       </section>
