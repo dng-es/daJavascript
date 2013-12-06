@@ -1,4 +1,4 @@
-daJavascript
+manualJS
 =============
 
 Manual de Javascript, desde cero hasta las características más avanzadas el lenguaje.
