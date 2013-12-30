@@ -302,8 +302,12 @@ console.log(miFunction(1,2));</pre>
         <p>Toda función recibe, ademas de los parametros especificados, dos parametros adiciones: <strong><em>arguments</em></strong> y el ámbito en el cual es invicada la función. El parámetro <em>arguments</em> es una especie de array (no puede considerarse un array ya que no posee ciertos metodos que tienen todos los arrays, como por ejemplo push) que contiene todos los argumentos con los que ha sido invocada la función. En el ejemplo anterior, al invocar <em>miFunction(1,2)</em>, <em>arguments</em> contendria dos elementos con los valores 1 y 2.</p>
         </div> 
         <h2 id="dom">DOM</h2>
-        <p>El DOM (Document Object Model) es API para interactuar con la estructura de un documento y permitir su modificación.</p>
-
+        <p>El DOM (Document Object Model) es API para interactuar con la estructura de un documento y permitir su modificación. Las modificaciones en el DOM se pueden hacer mediante Javascript y se puede modificar tanto el contenido como el especto de una página de forma dinámica. En definitiva, el DOM es la estructura de objetos que se genera cuando se carga un documento.</p>
+        <p>Pero, ¿qué es el DOM a nuestos ojos?, ¿es el HTML que escribimos? NO, ¿es el codigo fuente que podemos ver de una página Web (en la mayoria de los navegadores podemos ver el código fuente de la página haciendo click con el botón derecho del ratón)?, NO.</p>
+        <p>Como hemos dicho, no es el HTML que escribimos ya que, por ejemplo si creamos una tabla con <em>table</em> y no incluimos las etiquetas <em>tbody</em>, el propio navegador las incluirá por su cuenta y serán parte del DOM y por lo tanto podremos interactuar con ellas y modificar sus propiedades.</p>
+        <p>Tampoco será el código fuente que vemos de la página. Si por ejemplo, ves el código fuente de la página de la bandeja de entrada de tu cuenta de Gmail, podrás ver las llamadas a multitud de ficheros Javascript que hacen la carga de los datos y que por lo tanto modifican el DOM.</p>
+        <p>¿Que es el DOM entonces?. En la mayoria de los navegadores modernos existen las DevTools, herramientas que ayudan a los desarrolladores a verificar su codigo. Si miramos el código que nos muestran estan herramientas de desarrollo, veremos que se parece mucho al código HTML que hemos escrito pero con los añadidos generados por el Javascript y con las correciones hechas por el propio navegador. Eso es el DOM!!</p>
+        
         <h2 id="bom">BOM</h2>
         <p>El BOM (Browser Object Model) permite la manipulación de la ventana del navegador.</p>
 
