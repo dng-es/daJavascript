@@ -313,7 +313,23 @@ console.log(miFunction(1,2));</pre>
 
         <h2 id="eventos">Eventos</h2>
         <p>Un evento tiene lugar cuando se produce una acción: el usuario hace click, se envia un formulario o cuando cambia de tamaño la ventana el navegador.</p>
-
+        <p>La escucha de eventos o la captura de eventos se hace mediante el método <strong><em>addEventListener</em></strong> y su sintaxis es la siguiente:</p>
+        <div class="highlight highlight-html"><pre>
+elemento.addEventListener('evento',funcion_a_lanzar,boolean);</pre></div>
+        <p>Tambien podemos eliminar la escucha de un evento, así podriamos hacer que un evento fuese escuchado una sola vez:</p>
+        <div class="highlight highlight-html"><pre>
+elemento.removeEventListener('evento',funcion_a_eliminar,boolean);</pre></div> 
+        <p>El tercer parámetro de ambos métodos hace referencia al flujo del evento: cuando hacemos clic en el botón no sólo lo estamos haciendo clic sobre él, sino sobre los elementos que lo contienen en el árbol del DOM, es decir, hemos hecho clic además sobre el elemento body y sobre el elemento div. Sí sólo hay una función asignada a una escucha para el botón no hay mayor problema, pero si además hay una para el body y otra para el div, ¿cuál es el orden en que se deben lanzar las tres funciones?. Para ello existe lo que se denomina el <strong><em>flujo de eventos</em></strong>, según el cual, cuando se produce un evento este se produce en dos fase; una la captura (el evento comienza en el nivel superior del documento y recorre los elementos de padres a hijos) y la fase de burbuja, en orden inverso, acendiendo de hijos a padres.</p>       
+        <p>Pero Internet Explorer 7 e inferiores no soportan addEventListener, pero disponen de eventos propietarios con similares caracteristicas:</p>
+        <div class="highlight highlight-html"><pre>
+elemento.attachEvent('manejador_de_evento',funcion_a_lanzar);    
+elemento.detachEvent('manejador_de_evento',funcion_a_eliminar);</pre></div>    
+        <p>La sintaxis es muy parecida, únicamente cabe destacar dos cambios:</p>
+        <ul>
+            <li>No se hace referencia al evento sino al manejador de eventos. Básicamente es lo mismo solo que el manejador de eventos lleva el prefijo <strong><em>on</em></strong>, por lo que el manejador e eventos del evento <strong><em>click</em></strong> será <strong><em>onclick</em></strong>, el manejador del evento <strong><em>mouseover</em></strong> será <strong><em>onmouseover</em></strong></li>
+            <li>No existe el tercer parámetro: en IExplorer el flujo se identifica con la burbuja y no hay fase de captura</li>
+        </ul>
+        
         <h2 id="regulares">Expresiones regulares</h2>
         <p>Las expresiones regulares y su manejo son muy importantes en Javascript y serán muy utiles en las operaciones de comprobación, selección de elementos del DOM y otras acciones que necesitemos realizar.</p>
 
