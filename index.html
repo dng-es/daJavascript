@@ -14,13 +14,17 @@
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     <script src="javascripts/jquery-1.9.1.js"></script>
-    <script>
-      $(document).ready(function(){
-        $("nav ol li a").click(function(e) {
-            e.preventDefault(); 
-            $('html, body').animate({
-                scrollTop: $("#" + $(this).attr("data-dest")).offset().top
-            }, 500);
+    <script type="text/javascript">
+        $(document).ready(function(){
+          $("nav ol li a").click(function(e) {
+          e.preventDefault(); 
+          var that = $( this ); 
+          $('html, body').animate({
+              scrollTop: $("#" + $(this).attr("data-dest")).offset().top
+          }, 500,function(){
+              $("nav ol li a").removeClass("navSelected");
+              that.addClass("navSelected");
+          });
         });
 
         $("section h2, section h3, section h3, section h4").addClass("fa fa-code");
