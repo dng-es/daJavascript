@@ -59,7 +59,16 @@
           else{
             $("#top-trigger").fadeOut();
           }
-        })
+        });
+        
+        $(window).resize(function(event) {
+          if ($(window).width()>960){
+              $("header nav").slideDown();    
+          }
+          else{
+              $("header nav").slideUp();
+          }
+        });
       });
     </script>
   </head>
@@ -336,6 +345,21 @@ elemento.detachEvent('manejador_de_evento',funcion_a_eliminar);</pre></div>
         
         <h2 id="regulares">Expresiones regulares</h2>
         <p>Las expresiones regulares y su manejo son muy importantes en Javascript y serán muy utiles en las operaciones de comprobación, selección de elementos del DOM y otras acciones que necesitemos realizar.</p>
+        <p>Las expresiones regulares nos permite ver si una cadena de texto cumple un determinado formato, por ejemplo, si todo son dígitos, si tiene formato de fecha y hora, etc. También nos permiten extraer partes de esa cadena de texto que cumplan ese formato, por ejemplo, si dentro de un texto más o menos largo hay una fecha, podemos extraerla fácilmente.</p>
+        <p>Una expresión regular se construye con una cadena de texto que representa el formato que debe cumplir el texto. En javascript se puede hacer de dos formas, bien instanciando la clase <strong><em>RegExp</em></strong> pasándo como parámetro la cadena de formato o bien poniendo directamente la cadena de formato, en vez de entre comillas, entre <strong><em>/</em></strong>.</p>
+        <div class="highlight highlight-html"><pre>
+// Son equivalentes
+var reg = new RegExp("javascript");
+var reg = /javascript/;</pre></div>
+        <p>Para comprobar si una cadena de texto cumple con el formato definido en la expresión regular se empleará el método <strong><em>match</em></strong>:</p> 
+        <div class="highlight highlight-html"><pre>
+var reg = new RegExp("javascript");
+"hello javascript".match(reg);</pre></div>
+        <p>Si cumple los criterios de la expresión regular, devolverá un array de un elemento ["javascript"], en caso contrario devolverá null. Por lo tanto, para comprobar si cumple la expresión regular podríamos hacer la siguiente comprobación:</p>
+        <div class="highlight highlight-html"><pre>
+if ("hello javascript".match(reg)){
+    //entrará por el if ya que un array con un elemento se evalue como true en un if
+}</pre></div>
 
         <h2 id="tests">Fase de pruebas</h2>
         <p>Todo ninja de probar sus hazañas y demostrar que son ciertas, para ello es necesario la realización de pruebas y <em>tests</em> unitarios de nuestros scripts.</p>
