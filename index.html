@@ -28,23 +28,35 @@
             <li><a href="#" data-dest="historia" id="nav-historia">Historia</a></li>
             <li><a href="#" data-dest="accion" id="nav-accion">La capa de acción</a></li>
             <li><a href="#" data-dest="herramientas" id="nav-herramientas">Herramientas</a>
-              <li><a href="#" data-dest="sintaxis" id="nav-sintaxis">Sintaxis</a>
+              <li><a href="#" data-dest="sintaxis" id="nav-sintaxis">Sintaxis</a></li>
               <ol>
                 <li><a href="#" data-dest="variables" id="nav-variables">Variables</a></li>
                 <li><a href="#" data-dest="operadores" id="nav-operadores">Operadores</a></li>
                 <li><a href="#" data-dest="condicionales" id="nav-condicionales">Condicionales</a></li>
                 <li><a href="#" data-dest="bucles" id="nav-bucles">Bucles</a></li>
+                <ol>
+                    <li><a href="#" data-dest="bucle-for" id="nav-bucles-for">Bucle for</a></li>
+                    <li><a href="#" data-dest="bucle-dowhile" id="nav-bucles-dowhile">Bucle do ... while</a></li>
+                </ol>
                 <li><a href="#" data-dest="funciones" id="nav-funciones">Funciones</a></li>
-                </li>
+                <ol>
+                    <li><a href="#" data-dest="sobrecarga-funciones" id="nav-funciones-sobrecarga">Sobrecarga de funciones</a></li>
+                </ol>
+                <li><a href="#" data-dest="arrays" id="nav-arrays">Arrays</a></li>
+                <li><a href="#" data-dest="objetos" id="nav-objetos">Objetos</a></li>
+                <ol>
+                    <li><a href="#" data-dest="objMath" id="nav-math">Objeto Math</a></li>
+                    <li><a href="#" data-dest="objImage" id="nav-image">Objeto Image</a></li>
+                </ol>             
               </ol>
             </li>
-            
-            <li><a href="#" data-dest="dom" id="nav-dom">DOM</a>
-            <li><a href="#" data-dest="bom" id="nav-bom">BOM</a>
-            <li><a href="#" data-dest="eventos" id="nav-eventos">Eventos</a>
+            <li><a href="#" data-dest="dom" id="nav-dom">DOM</a></li>
+            <li><a href="#" data-dest="bom" id="nav-bom">BOM</a></li>
+            <li><a href="#" data-dest="eventos" id="nav-eventos">Eventos</a></li>
             <li><a href="#" data-dest="regulares" id="nav-regulares">Expresiones regulares</a></li>
-            <li><a href="#" data-dest="tests" id="nav-tests">Fase de pruebas</a>
-            <li><a href="#" data-dest="bibliografia" id="nav-bibliografia">Bibliografía</a>
+            <li><a href="#" data-dest="clousures" id="nav-clousures">Clousures</a></li>
+            <li><a href="#" data-dest="tests" id="nav-tests">Fase de pruebas</a></li>
+            <li><a href="#" data-dest="bibliografia" id="nav-bibliografia">Bibliografía</a></li>
           </ol>
         </nav>
 
@@ -68,9 +80,9 @@
         </ul>
 
         <h2 id="accion">La capa de acción</h2>
-        <p>Debemos considerar que una pagina Web esta formada por cuatro capas: contenido (los textos con la información), estrucctura (Html), estilos (Css) y acciones (Javascript). La siguiente figura ilustra esa estructura</p>
+        <p>Debemos considerar que una pagina Web esta formada por cuatro capas: contenido (los textos con la información), estructura (Html), estilos (Css) y acciones (Javascript). La siguiente figura ilustra esa estructura</p>
         <img src="images/0001.png" />
-        <p class="legend">Fuente: codexexempla.org</p>
+        <p class="legend">Fuente: codexexemple.org</p>
 
         <h2 id="herramientas">Herramientas</h2>
         <p>Javascript es un lenguaje interpretado y no compilado, por lo que para crear código javascript nos servirá cualquier editor de texto. Adicionalemnte, necesitaremos otras herramientas para la depuración de los scripts y herramientas para la realización de pruebas de nuestro codigo.</p>
@@ -231,7 +243,7 @@ switch (variable){
         <h3 id="bucles">Bucles</h3>
         <p>Los bucles en Javascript</p>
 
-        <h4>Bucle for</h4>
+        <h4 id="bucle-for">Bucle for</h4>
         <p>El bucle for se crea como en la mayoria de los lenguajes:</p>
         <div class="highlight highlight-html"><pre>
 for (var i=0; i<10; i++){
@@ -239,7 +251,7 @@ for (var i=0; i<10; i++){
 }</pre>
         </div> 
 
-        <h4>Bucle do ... while</h4>
+        <h4 id="bucle-dowhile">Bucle do ... while</h4>
         <p>En Javascript tambien existe el bucle do while, que se define de la siguiente forma:</p>
         <div class="highlight highlight-html"><pre>
 do{
@@ -256,15 +268,119 @@ function miFunction(a, b){
 
 console.log(miFunction(1,2));</pre>
         <p>Hemos invocado la función <em>miFunction</em> con dos argumentos, la función <em>miFunction</em> recibe dos parámetros: a y b.</p>
-        <p>Toda función recibe, ademas de los parametros especificados, dos parametros adiciones: <strong><em>arguments</em></strong> y el ámbito en el cual es invicada la función. El parámetro <em>arguments</em> es una especie de array (no puede considerarse un array ya que no posee ciertos metodos que tienen todos los arrays, como por ejemplo push) que contiene todos los argumentos con los que ha sido invocada la función. En el ejemplo anterior, al invocar <em>miFunction(1,2)</em>, <em>arguments</em> contendria dos elementos con los valores 1 y 2.</p>
+        <p>Toda función recibe, ademas de los parametros especificados, dos parametros adiciones: <strong><em>arguments</em></strong> y el ámbito en el cual es invocada la función. El parámetro <em>arguments</em> es una especie de array (no puede considerarse un array ya que no posee ciertos metodos que tienen todos los arrays, como por ejemplo push) que contiene todos los argumentos con los que ha sido invocada la función. En el ejemplo anterior, al invocar <em>miFunction(1,2)</em>, <em>arguments</em> contendria dos elementos con los valores 1 y 2.</p>
         </div> 
+
+        <h4 id="sobrecarga-funciones">Sobrecarga de funciones</h4>
+        <p>Como hemos visto, al definir una función declaramos los párametros que va recibir pero si invocamos la función con un número de argumentos distinto al número de parámetros definidos en la declaración, Javascript no lanzará un error sino que hará lo siguiente:</p>
+        <ul>
+            <li>Invocamos la función con menos parámetros de los declarados: los argumentos no pasados se tomaran como <strong><em>undefined</em></strong>.</li>
+            <li>Invocamos la función con más parámetros de los declarados: los argumentos pasados de más no serán tomados en cuenta. No obstante, esos argumentos de más enviados al invocar a la función serán accesibles mediante <strong><em>arguments</em></strong>.</li>
+        </ul>
+        <h2 id="arrays">Arrays</h2>
+        <p>En Javascript los arrays se pueden declarar de varias formas:</p>
+        <div class="highlight highlight-html"><pre>
+var arr1 = new Array(); // array vacio
+var arr2 = new Array(3); // array de 3 elementos
+var arr3 = new Array(3,3); // array de 2 elementos [3,3]</pre></div>
+        <p>Otra forma sería:</p>
+        <div class="highlight highlight-html"><pre>
+var arr1 = [];  // array vacío
+var arr2 = [0,0,0,0];  // array de 4 elementos cuyos valores son 0
+var arr3 = [3,3];  //array de 2 elementos cuyos valores son 3 y 3</pre></div>  
+        <p>Para obtener el tamaño de un array disponemos de su propiedad <strong><em>length</em></strong>:</p>
+        <div class="highlight highlight-html"><pre>
+var arr = [0,0,0,0];
+log(arr.length); // imprime 4.</pre></div>
+        <p>Para acceder a los elementos de un array:</p>
+        <div class="highlight highlight-html"><pre>        
+var arr = [1,2,3,4,5];
+console.log(arr[0]); // accediendo al primer elemento del array
+for(var i = 0, len = arr.length; i < len ; i++) {
+  console.log('En la posición: ' + i + ' esta el elemento: ' +  arr[i]);
+}</pre></div> 
+        <div class="cita">
+          <p><span class="fa fa-info-circle"></span>En el ejemplo anterior cabe destacar la forma en la que esta creado el bucle for: en lugar de hacerlo:</p>
+          <p><em>for (i = 0; i < arr.length; i++)</em></p>
+          <p>De esta forma estariamos recalculando el valor de arr.length tantas veces como elementos tenga el array. Imaginate con un array de 1000 elementos!!!</p>
+        </div>
+
+        <h2 id="objetos">Objetos</h2>
+        <p>En Javascript los objetos se declaran:</p>
+        <div class="highlight highlight-html"><pre>
+var obj = {};</pre></div>
+        <h3 id="objMath">Objeto Math</h3>
+        <p><strong><em>Math</em></strong> es un objeto global con sus prpiedades y métodos, pero a difrencia de otros no es un constructor y todas sus propiedades y métodos son estáticos</p>
+        <h4>Propiedades</h4>
+        <ul>
+            <li><strong>Math.E</strong>: Constante de Euler. Su valor es 2.718.</li>
+            <li><strong>Math.LN2</strong>: Logarítmo natural de 2, aproximadamente 0.693.</li>
+            <li><strong>Math.LN10</strong>: Logarítmo natural de 10, aproximadamente 2.303.</li>
+            <li><strong>Math.LOG2E</strong>: Logarítmo en base 2 de E, aproximadamente 1.443.</li>
+            <li><strong>Math.LOG10E</strong>: Base 10 logarithm of E, aproximadamente 0.434.</li>
+            <li><strong>Math.PI</strong>: El número PI 3.14159.</li>
+            <li><strong>Math.SQRT1_2</strong>: Square root of 1/2; equivalently, 1 over the square root of 2, aproximadamente 0.707.</li>
+            <li><strong>Math.SQRT2</strong>: Square root of 2, aproximadamente 1.414.</li>
+        </ul>
+        <h4>Métodos</h4>
+        <ul>
+            <li><strong>Math.abs(x)</strong>: Devuelve el valor absoluto de un número.</li>
+            <li><strong>Math.acos(x)</strong>: Devuelve el arcocoseno de un número.</li>
+            <li><strong>Math.acosh(x)</strong>: Devuelve the hyperbolic arccosine of a number.</li>
+            <li><strong>Math.asin(x)</strong>: Devuelve the arcsine of a number.</li>
+            <li><strong>Math.asinh(x)</strong>: Devuelve the hyperbolic arcsine of a number.</li>
+            <li><strong>Math.atan(x)</strong>: Devuelve the arctangent of a number.</li>
+            <li><strong>Math.atanh(x)</strong>: Devuelve the hyperbolic arctangent of a number.</li>
+            <li><strong>Math.atan2(x, y)</strong>: Devuelve the arctangent of the quotient of its arguments.</li>
+            <li><strong>Math.cbrt(x)</strong>: Devuelve the cube root of a number.</li>
+            <li><strong>Math.ceil(x)</strong>: Devuelve el entero más pequeño mayor o igual a un número.</li>
+            <li><strong>Math.cos(x)</strong>: Devuelve el coseno de un número.</li>
+            <li><strong>Math.cosh(x)</strong>: Devuelve the hyperbolic cosine of a number.</li>
+            <li><strong>Math.exp(x)</strong>: Devuelve Ex, where x is the argument, and E is Euler's constant (2.718...), the base of the natural logarithm.</li>
+            <li><strong>Math.expm1(x)</strong>: Devuelve subtracting 1 from exp(x).</li>
+            <li><strong>Math.floor(x)</strong>: Devuelve el entero más alto que sea menor o igual a un número.</li>
+            <li><strong>Math.fround(x)</strong>: Devuelve the nearest single precision float representation of a number.</li>
+            <li><strong>Math.hypot([x[,y[,…]]])</strong>: Devuelve the square root of the sum of squares of its arguments.</li>
+            <li><strong>Math.imul(x)</strong>: Returns the result of a 32-bit integer multiplication.</li>
+            <li><strong>Math.log(x)</strong>: Returns the natural logarithm (loge, also ln) of a number.</li>
+            <li><strong>Math.log1p(x)</strong>: Returns the natural logarithm of 1 + x (loge, also ln) of a number.</li>
+            <li><strong>Math.log10(x)</strong>: Returns the base 10 logarithm of x.</li>
+            <li><strong>Math.log2(x)</strong>: Returns the base 2 logarithm of x.</li>
+            <li><strong>Math.max([x[,y[,…]]])</strong>: Returns the largest of zero or more numbers.</li>
+            <li><strong>Math.min([x[,y[,…]]])</strong>: Returns the smallest of zero or more numbers.</li>
+            <li><strong>Math.pow(x,y)</strong>: Returns base to the exponent power, that is, baseexponent.</li>
+            <li><strong>Math.random()</strong>: Returns a pseudo-random number between 0 and 1.</li>
+            <li><strong>Math.round(x)</strong>: Returns the value of a number rounded to the nearest integer.</li>
+            <li><strong>Math.sign(x)</strong>: Returns the sign of the x, indicating whether x is positive, negative or zero.</li>
+            <li><strong>Math.sin(x)</strong>:Devuelve el seno de un número.</li>
+            <li><strong>Math.sinh(x)</strong>: Returns the hyperbolic sine of a number.</li>
+            <li><strong>Math.sqrt(x)</strong>: Returns the positive square root of a number.</li>
+            <li><strong>Math.tan(x)</strong>: Devuelve la tangente de un número.</li>
+            <li><strong>Math.tanh(x)</strong>: Returns the hyperbolic tangent of a number.</li>
+            <li><strong>Math.toSource()</strong>: Devuelve la cadena "Math".</li>
+            <li><strong>Math.trunc(x)</strong>: Devuelve la parte entera de un número, truncando los decimales.</li>
+        </ul>
+        <h3 id="objImage">Objeto Image</h3>
+        <p>Para crear un nuevo objeto imagen y acceder a sus propiedades:</p>
+        <div class="highlight highlight-html"><pre>
+var img = new Image();
+img.src = "images/image.jpg";
+img.width = "200";
+img.id = "imagen1";
+
+//obtener imagen con id=imagen2
+var img2 = document.getElementById("imagen2"),
+    altura = img2.height;</pre></div>        
         <h2 id="dom">DOM</h2>
         <p>El DOM (Document Object Model) es API para interactuar con la estructura de un documento y permitir su modificación. Las modificaciones en el DOM se pueden hacer mediante Javascript y se puede modificar tanto el contenido como el especto de una página de forma dinámica. En definitiva, el DOM es la estructura de objetos que se genera cuando se carga un documento.</p>
         <p>Pero, ¿qué es el DOM a nuestos ojos?, ¿es el HTML que escribimos? NO, ¿es el codigo fuente que podemos ver de una página Web (en la mayoria de los navegadores podemos ver el código fuente de la página haciendo click con el botón derecho del ratón)?, NO.</p>
+
         <p>Como hemos dicho, no es el HTML que escribimos ya que, por ejemplo si creamos una tabla con <em>table</em> y no incluimos las etiquetas <em>tbody</em>, el propio navegador las incluirá por su cuenta y serán parte del DOM y por lo tanto podremos interactuar con ellas y modificar sus propiedades.</p>
+
         <p>Tampoco será el código fuente que vemos de la página. Si por ejemplo, ves el código fuente de la página de la bandeja de entrada de tu cuenta de Gmail, podrás ver las llamadas a multitud de ficheros Javascript que hacen la carga de los datos y que por lo tanto modifican el DOM.</p>
+
         <p>¿Que es el DOM entonces?. En la mayoria de los navegadores modernos existen las DevTools, herramientas que ayudan a los desarrolladores a verificar su codigo. Si miramos el código que nos muestran estan herramientas de desarrollo, veremos que se parece mucho al código HTML que hemos escrito pero con los añadidos generados por el Javascript y con las correciones hechas por el propio navegador. Eso es el DOM!!</p>
-        
+
         <h2 id="bom">BOM</h2>
         <p>El BOM (Browser Object Model) permite la manipulación de la ventana del navegador.</p>
 
@@ -286,7 +402,7 @@ elemento.detachEvent('manejador_de_evento',funcion_a_eliminar);</pre></div>
             <li>No se hace referencia al evento sino al manejador de eventos. Básicamente es lo mismo solo que el manejador de eventos lleva el prefijo <strong><em>on</em></strong>, por lo que el manejador e eventos del evento <strong><em>click</em></strong> será <strong><em>onclick</em></strong>, el manejador del evento <strong><em>mouseover</em></strong> será <strong><em>onmouseover</em></strong></li>
             <li>No existe el tercer parámetro: en IExplorer el flujo se identifica con la burbuja y no hay fase de captura</li>
         </ul>
-        
+
         <h2 id="regulares">Expresiones regulares</h2>
         <p>Las expresiones regulares y su manejo son muy importantes en Javascript y serán muy utiles en las operaciones de comprobación, selección de elementos del DOM y otras acciones que necesitemos realizar.</p>
         <p>Las expresiones regulares nos permite ver si una cadena de texto cumple un determinado formato, por ejemplo, si todo son dígitos, si tiene formato de fecha y hora, etc. También nos permiten extraer partes de esa cadena de texto que cumplan ese formato, por ejemplo, si dentro de un texto más o menos largo hay una fecha, podemos extraerla fácilmente.</p>
@@ -303,7 +419,12 @@ var reg = new RegExp("javascript");
         <div class="highlight highlight-html"><pre>
 if ("hello javascript".match(reg)){
     //entrará por el if ya que un array con un elemento se evalue como true en un if
-}</pre></div>
+}</pre></div>        
+
+        <h2 id="clousures">Clousures</h2>
+        <p>Las clousures son el ámbito en el cual son accesibles las variables y funciones.</p>
+        <p>El uso de las clousures es esencial en el desarrollo de aplicaciones complejas en Javascript, por lo que el entendimiento de como funcionan nos proporcionará un arma vital en nuestros scripts.</p>
+        <p>Seguramente habrás creado clausures en la mayoria de tus scripts sin a lo mejor saberlo, veamos un sencillo ejemplo:</p>
 
         <h2 id="tests">Fase de pruebas</h2>
         <p>Todo ninja de probar sus hazañas y demostrar que son ciertas, para ello es necesario la realización de pruebas y <em>tests</em> unitarios de nuestros scripts.</p>
@@ -312,7 +433,8 @@ if ("hello javascript".match(reg)){
         <h2 id="bibliografia">Bibliografía</h2>
         <p>Para la realización de este manual se ha consultado las siguienetes fuentes:></p>
         <ul>
-            <li><a href="http://www.codexexempla.org/curso/index.php" target="_black">codexexempla.org</a></li>
+            <li><a href="http://www.codexexempla.org/curso/index.php" target="_blank">codexexempla.org</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math" target="blank">developer.mozilla.org</a></li>
         </ul>
 
         <div id="top-trigger"><span class="fa fa-chevron-circle-up" title="subir al principio"></span></div>
